@@ -1,0 +1,23 @@
+# Local app and generated data; never publish these.
+Strata/app/
+Strata/components/
+Strata/downloads/
+Strata/models/
+Strata/runtime/
+Strata/sessions/
+Strata/state/
+Strata/profiles/
+Strata/Workspace/
+Strata/logs/
+Strata/ui-build-work/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.zip
+*.exe
+__pycache__/
+*.pyc

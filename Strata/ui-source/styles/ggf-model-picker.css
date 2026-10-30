@@ -1,0 +1,10 @@
+.ggf-model-steps { padding: 14px 12px 8px; }
+.ggf-model-families { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 10px 0 18px; }
+.ggf-model-family { display: flex; flex-direction: column; gap: 5px; align-items: flex-start; text-align: left; min-width: 0; padding: 12px 10px; border: 1px solid #8886; border-radius: 8px; background: transparent; color: inherit; cursor: pointer; }
+.ggf-model-family.is-on { border: 2px solid #168675; padding: 11px 9px; background: #16867512; }
+.ggf-model-family:focus-visible { outline: 2px solid #168675; outline-offset: 2px; }
+.ggf-model-family small { font-size: 11px; opacity: .75; }
+.ggf-model-steps p { font-size: 12px; line-height: 1.5; margin: 7px 0; opacity: .8; }
+@media (max-width: 440px) { .ggf-model-families { grid-template-columns: 1fr; } }
+.menu .version-menu { min-width: 0; width: 100%; overflow-x: hidden; }
+.menu .version-row, .menu .version-head { grid-template-columns: minmax(0, 1fr) 84px 84px; }

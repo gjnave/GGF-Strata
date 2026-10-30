@@ -1,0 +1,25 @@
+.ggf-darla-guide {
+  display: grid;
+  grid-template-columns: 116px minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  margin: 0 0 28px;
+  padding: 20px;
+  border: 1px solid color-mix(in srgb, var(--st-accent, #168675) 38%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--st-accent, #168675) 8%, var(--st-surface, #fff));
+}
+.ggf-darla-guide__avatar {
+  width: 116px;
+  height: 116px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.ggf-darla-guide__copy h2 { margin: 4px 0 8px; }
+.ggf-darla-guide__copy p { margin: 0 0 12px; line-height: 1.5; }
+.ggf-darla-guide__copy ol { margin: 0 0 12px; padding-left: 22px; }
+.ggf-darla-guide__copy li { margin: 0 0 7px; line-height: 1.45; }
+@media (max-width: 600px) {
+  .ggf-darla-guide { grid-template-columns: 1fr; }
+  .ggf-darla-guide__avatar { width: 84px; height: 84px; }
+}
