@@ -34,7 +34,7 @@ Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. 
 
    ```bat
    winget install 7z
-   set STRATA_PORT=8799
+   set "PATH=%PATH%;C:\Program Files\7-Zip"
    7z x Strata-0.2.7-windows-x64-setup.exe -oStrata\app
    xcopy Strata\ui\* Strata\app\host\dist\ /E /I /Y
    ```
@@ -43,9 +43,10 @@ Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. 
 
    This extraction does not register a Windows installation. `Strata/ui-source/` records the modified UI source files; the prebuilt files in `Strata/ui/` are what the app serves.
 
-4. Start Strata from the same Command Prompt:
+4. Set Strata's port to 8799 and start it from the same Command Prompt:
 
    ```bat
+   set STRATA_PORT=8799
    run.bat
    ```
 
