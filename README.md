@@ -10,15 +10,7 @@ This is the **source repository**, not the member quick installer. It contains t
 
 ## Manual installation on Windows
 
-Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) and [7-Zip](https://www.7-zip.org/) first. The commands below assume `7z.exe` is on `PATH`; otherwise use its full path. Choose a writable folder with enough space for the models you plan to use.
-
-To install 7-Zip with Windows Package Manager, run:
-
-```bat
-winget install 7z
-```
-
-If `7z` is not recognized afterward, use `"C:\Program Files\7-Zip\7z.exe"` in place of `7z` in the extraction command below (or use your actual 7-Zip installation path).
+Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. Choose a writable folder with enough space for the models you plan to use.
 
 1. Clone this repository:
 
@@ -38,27 +30,30 @@ If `7z` is not recognized afterward, use `"C:\Program Files\7-Zip\7z.exe"` in pl
 
    Confirm the SHA-256 is **`b6b078cfd1939a8375eadf9181952d7c1cb267061a3e3428f35cd3b9d1b60da3`**. Stop if it differs.
 
-3. Extract the portable application and apply the GGF interface:
+3. Install 7-Zip, extract the portable application, and apply the GGF interface:
 
    ```bat
+   winget install 7z
    7z x Strata-0.2.7-windows-x64-setup.exe -oStrata\app
    xcopy Strata\ui\* Strata\app\host\dist\ /E /I /Y
    ```
 
+   If `7z` is not recognized, use `"C:\Program Files\7-Zip\7z.exe"` in place of `7z` in the extraction command (or use your actual 7-Zip installation path).
+
    This extraction does not register a Windows installation. `Strata/ui-source/` records the modified UI source files; the prebuilt files in `Strata/ui/` are what the app serves.
 
-4. Double-click **`run.bat`**. It starts this folder's server at `http://127.0.0.1:8798/` and opens the app. In Settings, follow DARLA to choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
-
-   If port 8798 is already used by another Strata installation, run these commands from the repository folder in Command Prompt:
+4. Set Strata's port to 8799 and start it from the same Command Prompt:
 
    ```bat
    set STRATA_PORT=8799
    run.bat
    ```
 
-   This copy opens at `http://127.0.0.1:8799/`. The port setting applies only to that Command Prompt session; repeat it when starting from a new Command Prompt.
+   This copy opens at `http://127.0.0.1:8799/`, avoiding a conflict with another copy using port 8798. The port setting applies only to that Command Prompt session; repeat this step when starting from a new Command Prompt.
 
-5. Double-click **`stop.bat`** to unload the model and stop this server. Finish or cancel active chats and downloads first. Both BAT files show their result until you press a key.
+5. For later launches, you can double-click **`run.bat`** to use the default port, `http://127.0.0.1:8798/`. To keep using port 8799, repeat step 4 instead; double-clicking does not inherit that Command Prompt's port setting. In Settings, follow DARLA to choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
+
+6. Double-click **`stop.bat`** to unload the model and stop a server using the default port 8798. Finish or cancel active chats and downloads first. Both BAT files show their result until you press a key.
 
    If you started on port 8799, stop it from the repository folder in Command Prompt using the same port:
 
