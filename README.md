@@ -34,6 +34,7 @@ Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. 
 
    ```bat
    winget install 7z
+   set STRATA_PORT=8799
    7z x Strata-0.2.7-windows-x64-setup.exe -oStrata\app
    xcopy Strata\ui\* Strata\app\host\dist\ /E /I /Y
    ```
@@ -42,16 +43,15 @@ Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. 
 
    This extraction does not register a Windows installation. `Strata/ui-source/` records the modified UI source files; the prebuilt files in `Strata/ui/` are what the app serves.
 
-4. Set Strata's port to 8799 and start it from the same Command Prompt:
+4. Start Strata from the same Command Prompt:
 
    ```bat
-   set STRATA_PORT=8799
    run.bat
    ```
 
-   This copy opens at `http://127.0.0.1:8799/`, avoiding a conflict with another copy using port 8798. The port setting applies only to that Command Prompt session; repeat this step when starting from a new Command Prompt.
+   This copy opens at `http://127.0.0.1:8799/`, avoiding a conflict with another copy using port 8798. The port setting applies only to that Command Prompt session. In a new Command Prompt, run `set STRATA_PORT=8799` again before `run.bat`.
 
-5. For later launches, you can double-click **`run.bat`** to use the default port, `http://127.0.0.1:8798/`. To keep using port 8799, repeat step 4 instead; double-clicking does not inherit that Command Prompt's port setting. In Settings, follow DARLA to choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
+5. For later launches, you can double-click **`run.bat`** to use the default port, `http://127.0.0.1:8798/`. To keep using port 8799, run `set STRATA_PORT=8799` followed by `run.bat` in Command Prompt; double-clicking does not inherit that Command Prompt's port setting. In Settings, follow DARLA to choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
 
 6. Double-click **`stop.bat`** to unload the model and stop a server using the default port 8798. Finish or cancel active chats and downloads first. Both BAT files show their result until you press a key.
 
