@@ -15,12 +15,13 @@ export function DarlaModelGuide() {
         || !!library?.variants.some(model => model.state === 'installed' || model.state === 'loaded');
     if (!settled || hasModel) return null;
     return <section className="ggf-darla-guide" aria-labelledby="ggf-darla-title">
-      <img className="ggf-darla-guide__avatar" src="/darla-guide.png" alt={tr("DARLA, your model setup guide")} />
+      <img className="ggf-darla-guide__avatar" src="/darla-guide.png" alt={tr("LIZ, your model setup guide")} />
       <div className="ggf-darla-guide__copy">
-        <span className="eyebrow">{tr("Getting started with DARLA")}</span>
-        <h2 id="ggf-darla-title">{tr("Choose a model before you start chatting")}</h2>
-        <p>{tr("Strata is running, but no local model is downloaded yet. I'll help you pick one in the Models page.")}</p>
+        <span className="eyebrow">{tr("Getting started with LIZ")}</span>
+        <h2 id="ggf-darla-title">{tr("Install the engine, then choose a model")}</h2>
+        <p>{tr("Start by installing the engine for your computer. Then I'll help you choose a model on the Models page.")}</p>
         <ol>
+          <li>{tr("Click Settings, open Engine, then click Check for updates. Click Update available, then confirm with Update. Wait for the engine installation to finish before downloading a model.")}</li>
           <li>{tr("Choose one model family: Qwen3.6, Qwen3.8, or DeepSeek V4.1 Flash.")}</li>
           <li>{tr("Choose a quantization for that model. Smaller downloads generally need less RAM and VRAM; larger ones usually retain more quality.")}</li>
           <li>{tr("Review the hardware and disk estimates, then confirm the download in the app. Once it finishes, load the model to use the agent.")}</li>

@@ -4,7 +4,7 @@
 
 **Want a quick install and the GGF GUI with more models? Visit [getgoingfast.pro/tools/strata](https://getgoingfast.pro/tools/strata).**
 
-**Get Going Fast** adaptation of [Strata](https://github.com/Niko1221/Strata) for a local Windows AI agent. The app offers Qwen3.6, Qwen3.8, and DeepSeek V4.1 Flash model families with selectable quantizations. It shows hardware guidance and downloads the selected model and compatible inference engine only after confirmation in the running app. With no model installed, Settings opens to DARLA's setup guide. Agent tools request approval for changes.
+**Get Going Fast** adaptation of [Strata](https://github.com/Niko1221/Strata) for a local Windows AI agent. The app offers Qwen3.6, Qwen3.8, and DeepSeek V4.1 Flash model families with selectable quantizations. It shows hardware guidance and lets you install the engine and download your chosen model in the app. With no model installed, Settings opens to LIZ's setup guide: first click **Settings → Engine → Check for updates → Update available → Update** and wait for installation to finish, then choose a model. Agent tools request approval for changes.
 
 This is the **source repository**, not the member quick installer. It contains the GGF launch controls, modified UI source overlay, ready-built UI, and artwork. It contains no model weights, installed engine, private settings, or official Strata application binary. The separate member installer is available through Get Going Fast.
 
@@ -52,7 +52,7 @@ Use **Command Prompt**. Install [Git](https://git-scm.com/downloads/win) first. 
 
    This copy opens at `http://127.0.0.1:8799/`, avoiding a conflict with another copy using port 8798. The port setting applies only to that Command Prompt session. In a new Command Prompt, run `set STRATA_PORT=8799` again before `run.bat`.
 
-5. For later launches, you can double-click **`run.bat`** to use the default port, `http://127.0.0.1:8798/`. To keep using port 8799, run `set STRATA_PORT=8799` followed by `run.bat` in Command Prompt; double-clicking does not inherit that Command Prompt's port setting. In Settings, follow DARLA to choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
+5. For later launches, you can double-click **`run.bat`** to use the default port, `http://127.0.0.1:8798/`. To keep using port 8799, run `set STRATA_PORT=8799` followed by `run.bat` in Command Prompt; double-clicking does not inherit that Command Prompt's port setting. In Settings, follow LIZ: install the engine first, then choose a model family and quantization. Review the app's disk and memory estimate before confirming the download. No model downloads during clone or startup.
 
 6. Double-click **`stop.bat`** to unload the model and stop a server using the default port 8798. Finish or cancel active chats and downloads first. Both BAT files show their result until you press a key.
 
